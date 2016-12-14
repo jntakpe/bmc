@@ -1,6 +1,8 @@
 /**
  * Fichier de configuration des plugins apportés par le thème Unify
  */
+
+
 (function () {
   'use strict';
 
@@ -11,6 +13,7 @@
   initParallaxBg();
   initCaroussel();
   initRevoSlider();
+  initCounter();
 
   function handleBootstrap() {
     $('.carousel').carousel({
@@ -32,14 +35,14 @@
   }
 
   function handleFullscreen() {
-    var windowHeight = $(window).height();
-    var headerHeight = 0;
+    let windowHeight = $(window).height();
+    let headerHeight = 0;
     if ($(document.body).hasClass('promo-padding-top')) {
       headerHeight = $(".header").height();
     }
     $(".fullheight").css('height', windowHeight - headerHeight);
     $(window).resize(function () {
-      var windowHeight = $(window).height();
+      let windowHeight = $(window).height();
       $(".fullheight").css('height', windowHeight - headerHeight);
     });
   }
@@ -56,7 +59,7 @@
   }
 
   function handleHeader() {
-    var $navbarFixedTop = $('.navbar-fixed-top');
+    let $navbarFixedTop = $('.navbar-fixed-top');
     if ($('.navbar').offset().top > 150) {
       $navbarFixedTop.addClass('top-nav-collapse');
     }
@@ -71,7 +74,7 @@
     let $offset = 0;
     $offset = $navbarFixedTop.height() + 12;
     $('.page-scroll a').bind('click', function (event) {
-      var $position = $($(this).attr('href')).offset().top;
+      let $position = $($(this).attr('href')).offset().top;
       $('html, body').stop().animate({
         scrollTop: $position - $offset
       }, 600);
@@ -161,6 +164,13 @@
         navigationStyle: "preview4",
         fullScreenOffsetContainer: ""
       });
+    });
+  }
+
+  function initCounter() {
+    $('.counter').counterUp({
+      delay: 10,
+      time: 1000
     });
   }
 

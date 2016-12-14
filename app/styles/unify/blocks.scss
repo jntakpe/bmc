@@ -169,11 +169,11 @@
   background: #fff;
   padding-top: 30px;
   padding-bottom: 20px;
+  min-height: 340px;
 }
 
 .service-box-v1 p {
   position: relative;
-  margin-bottom: 50px;
 }
 
 .service-box-v1 p:after {
@@ -189,6 +189,7 @@
 
 .service-box-v1 ul {
   padding: 0 40px;
+  margin-top: 50px;
 }
 
 .service-box-v1 li {

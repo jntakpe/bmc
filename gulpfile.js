@@ -39,15 +39,16 @@ gulp.task('scripts', () => {
 gulp.task('unify-js', () => {
   return gulp.src([
     'app/plugins/jquery.themepunch.tools.min.js',
-    'app/plugins/jquery.themepunch.revolution.min.js'
+    'app/plugins/jquery.themepunch.revolution.min.js',
+    'app/plugins/jquery.counterup.js'
   ])
-    .pipe($.concat('unify-plugins.js'))
+    .pipe($.concat('unify-plugins.min.js'))
     .pipe($.uglify())
     .pipe(gulp.dest('.tmp/scripts'))
 });
 
 gulp.task('unify-css', () => {
-  return gulp.src('app/plugins/**/*.css')
+  return gulp.src('app/plugins/*.css')
     .pipe($.concat('unify-plugins.css'))
     .pipe($.cssnano())
     .pipe(gulp.dest('.tmp/styles'))
@@ -104,7 +105,7 @@ gulp.task('extras', () => {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'unify-js', 'fonts'], () => {
+  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'unify-js', 'unify-css', 'fonts'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
