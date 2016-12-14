@@ -40,7 +40,9 @@ gulp.task('unify-js', () => {
   return gulp.src([
     'app/plugins/jquery.themepunch.tools.min.js',
     'app/plugins/jquery.themepunch.revolution.min.js',
-    'app/plugins/jquery.counterup.js'
+    'app/plugins/jquery.counterup.js',
+    'app/plugins/jquery.cubeportfolio.min.js',
+    'app/plugins/cube-portfolio-lightbox.js'
   ])
     .pipe($.concat('unify-plugins.min.js'))
     .pipe($.uglify())
