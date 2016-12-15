@@ -45,7 +45,7 @@ gulp.task('unify-js', () => {
     'app/plugins/cube-portfolio-lightbox.js'
   ])
     .pipe($.concat('unify-plugins.min.js'))
-    .pipe($.uglify())
+    //.pipe($.uglify())
     .pipe(gulp.dest('.tmp/scripts'))
 });
 

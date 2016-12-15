@@ -156,7 +156,7 @@
 
     // set loading status
     oMsg = me.text();
-    me.text('LOADING...');
+    me.text('Chargement ...');
 
     // perform ajax request
     $.ajax({
@@ -165,12 +165,10 @@
       dataType: 'HTML'
     }).done(function (result) {
       var items, itemsNext;
-
       // find current container
       items = $(result).filter(function () {
         return $(this).is('div' + '.cbp-loadMore-block' + clicks);
       });
-
       gridContainer.cubeportfolio('appendItems', items.html(),
         function () {
           // put the original message back
@@ -182,7 +180,7 @@
           });
 
           if (itemsNext.length === 0) {
-            me.text('NO MORE WORKS');
+            me.text('Aucune image à charger');
             me.addClass('cbp-l-loadMore-button-stop');
           }
 
