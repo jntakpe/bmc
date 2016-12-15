@@ -1,6 +1,20 @@
 (function ($, window, document, undefined) {
   'use strict';
 
+  $.fn.htmlClean = function () {
+    this.contents().filter(function () {
+      if (this.nodeType != 3) {
+        $(this).htmlClean();
+        return false;
+      }
+      else {
+        this.textContent = $.trim(this.textContent);
+        return !/\S/.test(this.nodeValue);
+      }
+    }).remove();
+    return this;
+  };
+
   var gridContainer = $('#grid-container'),
     filtersContainer = $('#filters-container'),
     wrap, filtersCallback;
@@ -169,7 +183,7 @@
       items = $(result).filter(function () {
         return $(this).is('div' + '.cbp-loadMore-block' + clicks);
       });
-      gridContainer.cubeportfolio('appendItems', items.html(),
+      gridContainer.cubeportfolio('appendItems', items.htmlClean().html(),
         function () {
           // put the original message back
           me.text(oMsg);
