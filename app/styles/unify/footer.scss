@@ -108,8 +108,13 @@
   padding: 25px 0 20px;
 }
 
+.copyright-section .inline-child > * {
+  display: inline-block;
+}
+
 .copyright-section p {
   font-size: 14px;
+  margin: 10px 0 0 0;
 }
 
 .copyright-section p a {
@@ -119,6 +124,10 @@
 
 .copyright-section p a:hover {
   text-decoration: none;
+}
+
+.copyright-section ul.social-icons {
+  padding-left: 10px;
 }
 
 .copyright-section ul.social-icons li {
