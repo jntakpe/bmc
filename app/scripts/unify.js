@@ -38,12 +38,12 @@
     let windowHeight = $(window).height();
     let headerHeight = 0;
     if ($(document.body).hasClass('promo-padding-top')) {
-      headerHeight = $(".header").height();
+      headerHeight = $('.header').height();
     }
-    $(".fullheight").css('height', windowHeight - headerHeight);
+    $('.fullheight').css('height', windowHeight - headerHeight);
     $(window).resize(function () {
       let windowHeight = $(window).height();
-      $(".fullheight").css('height', windowHeight - headerHeight);
+      $('.fullheight').css('height', windowHeight - headerHeight);
     });
   }
 
@@ -94,22 +94,22 @@
   }
 
   function initCaroussel() {
-    $(".owl-slider").owlCarousel({
+    $('.owl-slider').owlCarousel({
       itemsDesktop: [1000, 5],
       itemsDesktopSmall: [900, 4],
       itemsTablet: [600, 3],
       itemsMobile: [479, 2]
     });
 
-    $(".next-v1").click(function () {
+    $('.next-v1').click(function () {
       owl.trigger('owl.next');
     });
 
-    $(".prev-v1").click(function () {
+    $('.prev-v1').click(function () {
       owl.trigger('owl.prev');
     });
 
-    $(".owl-slider-v2").owlCarousel({
+    $('.owl-slider-v2').owlCarousel({
       itemsDesktop: [1000, 5],
       itemsDesktopSmall: [900, 4],
       itemsTablet: [600, 3],
@@ -117,15 +117,15 @@
       slideSpeed: 1000
     });
 
-    $(".next-v2").click(function () {
+    $('.next-v2').click(function () {
       owl.trigger('owl.next');
     });
 
-    $(".prev-v2").click(function () {
+    $('.prev-v2').click(function () {
       owl.trigger('owl.prev');
     });
 
-    $(".owl-slider-v3").owlCarousel({
+    $('.owl-slider-v3').owlCarousel({
       items: 9,
       autoPlay: 5000,
       itemsDesktop: [1000, 5],
@@ -134,18 +134,18 @@
       itemsMobile: [300, 2]
     });
 
-    $(".owl-slider-v4").owlCarousel({
+    $('.owl-slider-v4').owlCarousel({
       items: 3,
       itemsDesktop: [1000, 3],
       itemsTablet: [600, 2],
       itemsMobile: [479, 1]
     });
 
-    $(".owl-ts-v1").owlCarousel({
+    $('.owl-ts-v1').owlCarousel({
       slideSpeed: 600,
       singleItem: true,
       navigation: true,
-      navigationText: ["", ""]
+      navigationText: ['', '']
     });
 
   }
@@ -157,12 +157,12 @@
         startwidth: 1170,
         startheight: 500,
         hideThumbs: 10,
-        fullWidth: "on",
-        fullScreen: "on",
-        hideCaptionAtLimit: "",
-        dottedOverlay: "twoxtwo",
-        navigationStyle: "preview4",
-        fullScreenOffsetContainer: ""
+        fullWidth: 'on',
+        fullScreen: 'on',
+        hideCaptionAtLimit: '',
+        dottedOverlay: 'twoxtwo',
+        navigationStyle: 'preview4',
+        fullScreenOffsetContainer: ''
       });
     });
   }

@@ -45,7 +45,7 @@ gulp.task('unify-js', () => {
     'app/plugins/cube-portfolio-lightbox.js'
   ])
     .pipe($.concat('unify-plugins.min.js'))
-    //.pipe($.uglify())
+    .pipe($.uglify())
     .pipe(gulp.dest('.tmp/scripts'))
 });
 
@@ -84,7 +84,6 @@ gulp.task('html', ['styles', 'scripts', 'unify-css', 'unify-js'], () => {
 
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin()))
     .pipe(gulp.dest('dist/images'));
 });
 
@@ -92,7 +91,8 @@ gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {
   })
     .concat('app/fonts/**/*'))
-    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
+    .pipe(gulp.dest('.tmp/fonts'))
+    .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('extras', () => {
